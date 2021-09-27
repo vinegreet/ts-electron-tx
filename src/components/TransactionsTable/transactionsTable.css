@@ -1,9 +1,6 @@
-.tx_table {
-}
-
 .tx_table-row {
   display: grid;
-  grid-template-columns: 12em 9em 9em 11em 9em 15em;
+  grid-template-columns: 12em minmax(9em, 20vw) minmax(9em, 20vw) 11em 9em minmax(15em, 31vw);
 }
 
 .table-column_amount {
