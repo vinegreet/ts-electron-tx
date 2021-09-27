@@ -6,6 +6,10 @@
   grid-template-columns: 12em 9em 9em 11em 9em 15em;
 }
 
+.table-column_amount {
+  text-align: right;
+}
+
 .tx_table-cell, .table-header_cell {
   border: var(--border);
   padding: .5em 1em;
@@ -19,8 +23,5 @@
 
 .table-header_cell {
   background-color: var(--lighter-gray);
-}
-
-.table-column_amount {
-  text-align: right;
+  text-align: center;
 }
