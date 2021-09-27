@@ -1,0 +1,26 @@
+.tx_table {
+}
+
+.tx_table-row {
+  display: grid;
+  grid-template-columns: 12em 9em 9em 11em 9em 15em;
+}
+
+.tx_table-cell, .table-header_cell {
+  border: var(--border);
+  padding: .5em 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tx_table-cell {
+  background-color: var(--color-bg);
+}
+
+.table-header_cell {
+  background-color: var(--lighter-gray);
+}
+
+.table-column_amount {
+  text-align: right;
+}
