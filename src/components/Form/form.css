@@ -1,0 +1,14 @@
+.tx_form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3em;
+}
+
+.input {
+  width: 25em;
+  margin-bottom: 1em;
+}
+
+.button {
+  width: 12em;
+}
