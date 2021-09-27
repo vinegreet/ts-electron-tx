@@ -7,6 +7,5 @@
 .tx_container {
   height: 95vh;
   padding: 3em;
-  background-color: var(--gray);
   overflow: scroll;
 }
