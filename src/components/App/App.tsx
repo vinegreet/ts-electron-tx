@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import DataContext from '../../context/DataContext';
 import Form from '../Form';
-import TxTable from '../TxTable/TxTable';
+import TransactionsTable from '../TransactionsTable';
+
 import './app.css';
 
-const App = () => {
+const App: React.FC = () => {
+  const { txSuccess, txErrorMessage } = useContext(DataContext);
+
   return (
     <div className="app">
       <div className="tx_container">
         <Form />
-        <TxTable />
-        {/* TODO: show error message instead of table in case of failed request */}
+        {
+          txSuccess
+            ? <TransactionsTable />
+            : <div className="tx_error-message">{txErrorMessage}</div>
+        }
       </div>
     </div>
   );
