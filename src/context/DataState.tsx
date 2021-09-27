@@ -13,17 +13,19 @@ const DataState: React.FC = ({ children }) => {
   const [ state, dispatch ] = useReducer(dataReducer, initialState);
 
   const getTransactions = (status: string, data: IApiTxData): void => {
-    const { message, result: transactions } = data;
+    const { message, result } = data;
 
     if (status === requestStatus.success) {
       dispatch({
         type: actionTypes.TRANSACTIONS_SUCCESS,
-        payload: transactions,
+        payload: result,
       });
     } else {
       dispatch({
         type: actionTypes.TRANSACTIONS_FAILED,
-        payload: message ?? 'Something went wrong, please check your connection, or try again later.',
+        payload: message === 'NOTOK'
+          ? result
+          : message ?? 'Something went wrong, please check your connection, or try again later.',
       });
     }
   }

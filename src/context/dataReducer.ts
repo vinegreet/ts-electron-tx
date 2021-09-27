@@ -16,12 +16,16 @@ const reducer = (state: IDataState, action: IAction) => {
       return {
         ...state,
         transactions: action.payload,
+        txSuccess: true,
+        txErrorMessage: '',
       }
 
     case actionTypes.TRANSACTIONS_FAILED:
       return {
         ...state,
-        errorMessage: action.payload,
+        transactions: [],
+        txSuccess: false,
+        txErrorMessage: action.payload,
       }
 
     default:

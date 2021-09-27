@@ -26,7 +26,8 @@ export interface IDataTransaction {
 }
 
 export interface IDataState {
-  address: string
+  txSuccess: boolean
+  txErrorMessage: string
   transactions: IDataTransaction[]
 }
 
