@@ -10,7 +10,7 @@ const Form: React.FC = () => {
   const [ address, setAddress ] = useState('0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a');
   const [ apiKey, setApiKey ] = useState('');
   const { getTransactions } = useContext(DataContext);
-  const isButtonDisabled = address === '' && apiKey === '';
+  const isButtonDisabled = address === '' || apiKey === '';
 
   const handleButtonClick = (): void => {
     (async () => {
@@ -27,7 +27,7 @@ const Form: React.FC = () => {
 
   return (
     <div className="tx_form">
-      <label className="input-label">Ether address</label>
+      <label className="input-label">Ether address (mandatory)</label>
       <input
         className="input tx_address"
         type="text"
@@ -35,7 +35,7 @@ const Form: React.FC = () => {
         onChange={(e) => setAddress(e.target.value)}
         value={address}
       />
-      <label className="input-label">Your API key</label>
+      <label className="input-label">Your API key (mandatory)</label>
       <input
         className="input tx_api-key"
         type="text"
