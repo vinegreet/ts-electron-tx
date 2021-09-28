@@ -9,6 +9,10 @@ export const requestStatus = {
   failure: '0',
 };
 
+// When you submit invalid address or API key, Etherscan returns this strange 'NOTOK' in the
+// 'message' property, whereas the meaningful message sits in the 'result' property...
+export const errorMessageWhenToShowResultInstead = 'NOTOK';
+
 const DataState: React.FC = ({ children }) => {
   const [ state, dispatch ] = useReducer(dataReducer, initialState);
 
@@ -23,7 +27,7 @@ const DataState: React.FC = ({ children }) => {
     } else {
       dispatch({
         type: actionTypes.TRANSACTIONS_FAILED,
-        payload: message === 'NOTOK'
+        payload: message === errorMessageWhenToShowResultInstead
           ? result
           : message ?? 'Something went wrong, please check your connection, or try again later.',
       });
