@@ -11,6 +11,7 @@ const App: React.FC = () => {
   return (
     <div className="app">
       <div className="tx_container">
+        <h1 className="tx_title">I'm into history. That wallet interests me...</h1>
         <Form />
         {
           txSuccess
