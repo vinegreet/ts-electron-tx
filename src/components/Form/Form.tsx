@@ -27,19 +27,19 @@ const Form: React.FC = () => {
 
   return (
     <div className="tx_form">
-      <label className="input-label">Ether address (mandatory)</label>
+      <label className="input-label">Ethereum wallet address (mandatory)</label>
       <input
         className="input tx_address"
         type="text"
-        placeholder="Ether address"
+        placeholder="Ethereum wallet address"
         onChange={(e) => setAddress(e.target.value)}
         value={address}
       />
-      <label className="input-label">Your API key (mandatory)</label>
+      <label className="input-label">Your Etherscan API key (mandatory)</label>
       <input
         className="input tx_api-key"
         type="text"
-        placeholder="Your API key"
+        placeholder="Your Etherscan API key"
         onChange={(e) => setApiKey(e.target.value)}
       />
       <button
